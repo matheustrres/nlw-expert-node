@@ -1,0 +1,28 @@
+{
+	"name": "nlw-expert-node",
+	"author": "Matheus Torres <matheustrres.rj@gmail.com>",
+	"version": "1.0.0",
+	"description": "NLW Expert Node.js trail",
+	"main": "./dist/index.js",
+	"license": "ISC",
+	"scripts": {
+		"start:dev": "tsx watch ./src/http/server.ts"
+	},
+	"dependencies": {
+		"@prisma/client": "^5.9.1",
+		"fastify": "^4.26.0",
+		"zod": "^3.22.4"
+	},
+	"devDependencies": {
+		"@types/node": "^20.11.0",
+		"@typescript-eslint/eslint-plugin": "^6.21.0",
+		"@typescript-eslint/parser": "^6.21.0",
+		"eslint": "^8.56.0",
+		"eslint-plugin-import-helpers": "^1.3.1",
+		"prettier": "^3.2.5",
+		"prisma": "^5.9.1",
+		"tsx": "^4.7.0",
+		"typescript": "^5.3.3"
+	},
+	"keywords": []
+}

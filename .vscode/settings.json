@@ -1,0 +1,51 @@
+{
+	// editor
+	"editor.wordWrap": "on",
+	"editor.fontSize": 14,
+	"editor.lineHeight": 25,
+	"editor.tabSize": 2,
+	"editor.bracketPairColorization.enabled": true,
+	"editor.guides.bracketPairs": true,
+	"editor.minimap.enabled": false,
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"files.autoSave": "afterDelay",
+	// explorer
+	"explorer.compactFolders": false,
+	// workbench
+	"workbench.editor.enablePreview": false,
+	"workbench.colorTheme": "Default Dark Modern",
+	// prettier
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"prettier.enable": true,
+	"prettier.singleQuote": false,
+	"prettier.tabWidth": 2,
+	"prettier.semi": true,
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.detectIndentation": false,
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2
+	},
+	"[yaml]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	// terminal
+	"terminal.integrated.fontSize": 16,
+	"terminal.integrated.profiles.windows": {
+		"Git Bash": {
+			"source": "Git Bash"
+		}
+	},
+	"[prisma]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "Prisma.prisma"
+	},
+	"terminal.integrated.defaultProfile.windows": "Git Bash"
+}
