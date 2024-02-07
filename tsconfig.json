@@ -4,6 +4,9 @@
     "module": "node16",
     "lib": ["es2023"],
     "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "strict": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

@@ -28,7 +28,13 @@
 			"warn",
 			{
 				"newlinesBetween": "always",
-				"groups": ["/^node/", "module", "absolute", ["sibling"]],
+				"groups": [
+					"/^node/",
+					"module",
+					"absolute",
+					"/^@/lib/",
+					["sibling"]
+				],
 				"alphabetize": {
 					"order": "asc",
 					"ignoreCase": false
