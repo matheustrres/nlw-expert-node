@@ -1,9 +1,11 @@
 import { randomUUID } from 'node:crypto';
 
+import { votingPubSub } from '@/utils/voting-pub-sub';
 import { type FastifyInstance } from 'fastify';
 import { z } from 'zod';
 
 import { prismaClient } from '@/lib/prisma';
+import { redisClient } from '@/lib/redis';
 
 export async function voteOnPollRoute(app: FastifyInstance) {
 	app.post('/polls/:pollId/vote', async (request, reply) => {
@@ -39,6 +41,17 @@ export async function voteOnPollRoute(app: FastifyInstance) {
 						id: userAlreadyVotedOnPoll.id,
 					},
 				});
+
+				const votes = await redisClient.zincrby(
+					pollId,
+					-1,
+					userAlreadyVotedOnPoll.pollOptionId,
+				);
+
+				votingPubSub.publish(pollId, {
+					pollOptionId: userAlreadyVotedOnPoll.pollOptionId,
+					votes: Number(votes),
+				});
 			} else if (userAlreadyVotedOnPoll) {
 				return reply.status(400).send({
 					time: new Date().toISOString(),
@@ -65,6 +78,13 @@ export async function voteOnPollRoute(app: FastifyInstance) {
 				pollId,
 				pollOptionId,
 			},
+		});
+
+		const votes = await redisClient.zincrby(pollId, 1, pollOptionId);
+
+		votingPubSub.publish(pollId, {
+			pollOptionId,
+			votes: Number(votes),
 		});
 
 		return reply.status(201).send();
