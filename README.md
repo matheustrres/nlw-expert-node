@@ -1,4 +1,6 @@
-![Logo](./.github/logo.png)
+<p align="center">
+  <img alt="NLW Expert Logo" src=".github/logo.png" width="200px" />
+</p>
 
 # NLW Expert (Node.js)
 
